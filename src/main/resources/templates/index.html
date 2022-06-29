@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Spring CRUD</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
+<body>
+<div class="container">
+    <h1>People list</h1>
+    <div th:if="${people != null and !people.empty}">
+        <table class="table">
+            <thead>
+            <tr>
+                <th>Firstname</th>
+                <th>Lastname</th>
+                <th>Email</th>
+                <th>Phone</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="person : ${people}">
+                <td th:text="${person.firstname}"></td>
+                <td th:text="${person.lastname}"></td>
+                <td th:text="${person.email}"></td>
+                <td th:text="${person.phone}"></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div th:if="${people == null or people.empty}">
+        No data to display.
+    </div>
+</div>
+</body>
+</html>
