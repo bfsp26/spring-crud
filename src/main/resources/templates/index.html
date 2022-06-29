@@ -9,7 +9,14 @@
 </head>
 <body>
 <div class="container">
-    <h1>People list</h1>
+    <h1>CRUD</h1>
+    <ul>
+        <li>
+            <a th:href="@{/add}">Create person</a>
+        </li>
+    </ul>
+
+    <h2>People list</h2>
     <div th:if="${people != null and !people.empty}">
         <table class="table">
             <thead>
