@@ -25,6 +25,8 @@
                 <th>Lastname</th>
                 <th>Email</th>
                 <th>Phone</th>
+                <th>Edit</th>
+                <th>Delete</th>
             </tr>
             </thead>
             <tbody>
@@ -33,6 +35,9 @@
                 <td th:text="${person.lastname}"></td>
                 <td th:text="${person.email}"></td>
                 <td th:text="${person.phone}"></td>
+                <td>
+                    <a th:href="@{/edit/} + ${person.id}" th:text="Edit"></a>
+                </td>
             </tr>
             </tbody>
         </table>

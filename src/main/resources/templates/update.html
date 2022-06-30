@@ -18,6 +18,7 @@
     <h2 class="mb-2">Client information</h2>
 
     <form th:action="@{/save}" method="post" th:object="${person}" autocomplete="off">
+        <input type="hidden" name="id" th:field="*{id}">
         <div class="form-floating mb-3">
             <input type="text" class="form-control" placeholder="Firstname" name="firstname" th:field="*{firstname}">
             <label>Firstname</label>

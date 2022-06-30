@@ -35,4 +35,11 @@ public class PersonController {
         return "redirect:/";
     }
 
+    @GetMapping(path = "/edit/{id}")
+    public String edit(Person person, Model model) {
+        person = personService.findPerson(person);
+        model.addAttribute("person", person);
+        return "update";
+    }
+
 }
