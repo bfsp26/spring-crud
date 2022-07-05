@@ -22,19 +22,24 @@
     <div class="form-floating mb-3">
       <input type="text" class="form-control" placeholder="Firstname" name="firstname" th:field="*{firstname}">
       <label>Firstname</label>
+      <span class="form-text text-danger" th:if=" ${#fields.hasErrors('firstname')}"
+            th:errors="*{firstname}">Required field</span>
     </div>
     <div class="form-floating mb-3">
       <input type="text" class="form-control" placeholder="Firstname" name="lastname"
              th:field="*{lastname}">
       <label>Lastname</label>
+      <span class="form-text text-danger" th:if="${#fields.hasErrors('lastname')}" th:errors="*{lastname}">Required field</span>
     </div>
     <div class="form-floating mb-3">
-      <input type="email" class="form-control" placeholder="name@example.com" name="email" th:field="*{email}">
+      <input type="text" class="form-control" placeholder="name@example.com" name="email" th:field="*{email}">
       <label>Email address</label>
+      <span class="form-text text-danger" th:if="${#fields.hasErrors('email')}" th:errors="*{email}">Required field</span>
     </div>
     <div class="form-floating mb-3">
       <input type="tel" class="form-control" placeholder="Phone" name="phone" th:field="*{phone}">
       <label>Phone</label>
+      <span class="form-text text-danger" th:if="${#fields.hasErrors('phone')}" th:errors="*{phone}">Required field</span>
     </div>
 
     <button type="submit" class="btn btn-primary">Save</button>
