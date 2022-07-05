@@ -42,4 +42,10 @@ public class PersonController {
         return "update";
     }
 
+    @GetMapping(path = "/delete")
+    public String delete(Person person) {
+        personService.delete(person);
+        return "redirect:/";
+    }
+
 }

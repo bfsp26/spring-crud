@@ -38,10 +38,6 @@
                 <td>
                     <a th:href="@{/edit/} + ${person.id}" th:text="Edit"></a>
                 </td>
-                <td>
-                    <!-- Query Parameter -->
-                    <a th:href="@{/delete(id=${person.id})}" th:text="Delete"></a>
-                </td>
             </tr>
             </tbody>
         </table>
