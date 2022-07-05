@@ -9,7 +9,7 @@
 </head>
 <body>
 <div class="container">
-  <h1>CRUD</h1>
+  <header th:replace="layout/layout :: header"></header>
   <ul>
     <li>
       <a th:href="@{/}">Return</a>
@@ -34,16 +34,19 @@
     <div class="form-floating mb-3">
       <input type="text" class="form-control" placeholder="name@example.com" name="email" th:field="*{email}">
       <label>Email address</label>
-      <span class="form-text text-danger" th:if="${#fields.hasErrors('email')}" th:errors="*{email}">Required field</span>
+      <span class="form-text text-danger" th:if="${#fields.hasErrors('email')}"
+            th:errors="*{email}">Required field</span>
     </div>
     <div class="form-floating mb-3">
       <input type="tel" class="form-control" placeholder="Phone" name="phone" th:field="*{phone}">
       <label>Phone</label>
-      <span class="form-text text-danger" th:if="${#fields.hasErrors('phone')}" th:errors="*{phone}">Required field</span>
+      <span class="form-text text-danger" th:if="${#fields.hasErrors('phone')}"
+            th:errors="*{phone}">Required field</span>
     </div>
 
     <button type="submit" class="btn btn-primary">Save</button>
   </form>
+  <footer th:replace="layout/layout :: footer"></footer>
 </div>
 </body>
 </html>
