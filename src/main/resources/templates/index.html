@@ -10,7 +10,7 @@
 <body>
 <div class="container">
   <header th:replace="layout/layout :: header"></header>
-  <h2>People list</h2>
+  <h2 th:text="#{msg.index.subtitle}"></h2>
   <ul>
     <li>
       <a th:href="@{/add}" th:text="#{person.create}"></a>
