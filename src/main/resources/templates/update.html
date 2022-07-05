@@ -10,41 +10,40 @@
 <body>
 <div class="container">
   <header th:replace="layout/layout :: header"></header>
+  <h2 class="mb-2" th:text="#{msg.subtitle}"></h2>
   <ul>
     <li>
-      <a th:href="@{/}">Return</a>
+      <a th:href="@{/}" th:text="#{actions.return}"></a>
     </li>
   </ul>
-  <h2 class="mb-2">Client information</h2>
-
   <form th:action="@{/save}" method="post" th:object="${person}" autocomplete="off">
     <input type="hidden" name="id" th:field="*{id}">
     <div class="form-floating mb-3">
       <input type="text" class="form-control" placeholder="Firstname" name="firstname" th:field="*{firstname}">
-      <label>Firstname</label>
+      <label th:text="#{person.firstname}"></label>
       <span class="form-text text-danger" th:if=" ${#fields.hasErrors('firstname')}"
             th:errors="*{firstname}">Required field</span>
     </div>
     <div class="form-floating mb-3">
       <input type="text" class="form-control" placeholder="Firstname" name="lastname"
              th:field="*{lastname}">
-      <label>Lastname</label>
+      <label th:text="#{person.lastname}"></label>
       <span class="form-text text-danger" th:if="${#fields.hasErrors('lastname')}" th:errors="*{lastname}">Required field</span>
     </div>
     <div class="form-floating mb-3">
       <input type="text" class="form-control" placeholder="name@example.com" name="email" th:field="*{email}">
-      <label>Email address</label>
+      <label th:text="#{person.email}"></label>
       <span class="form-text text-danger" th:if="${#fields.hasErrors('email')}"
             th:errors="*{email}">Required field</span>
     </div>
     <div class="form-floating mb-3">
       <input type="tel" class="form-control" placeholder="Phone" name="phone" th:field="*{phone}">
-      <label>Phone</label>
+      <label th:text="#{person.phone}"></label>
       <span class="form-text text-danger" th:if="${#fields.hasErrors('phone')}"
             th:errors="*{phone}">Required field</span>
     </div>
 
-    <button type="submit" class="btn btn-primary">Save</button>
+    <button type="submit" class="btn btn-primary" th:text="#{actions.save}"></button>
   </form>
   <footer th:replace="layout/layout :: footer"></footer>
 </div>

@@ -6,12 +6,11 @@
 </head>
 <body>
 <header th:fragment="header">
-  <h1>People control</h1>
+  <h1 th:text="#{template.header}" class="text-uppercase text-center"></h1>
 </header>
 <footer th:fragment="footer">
-  <p>
-    ©2022 All Rights Reserved.
-  </p>
+  <!-- <p>[[#{template.footer}]]</p> -->
+  <p th:text="#{template.footer}"></p>
 </footer>
 </body>
 </html>

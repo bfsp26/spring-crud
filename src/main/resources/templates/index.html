@@ -10,23 +10,22 @@
 <body>
 <div class="container">
   <header th:replace="layout/layout :: header"></header>
+  <h2>People list</h2>
   <ul>
     <li>
-      <a th:href="@{/add}">Create person</a>
+      <a th:href="@{/add}" th:text="#{person.create}"></a>
     </li>
   </ul>
-
-  <h2>People list</h2>
   <div th:if="${people != null and !people.empty}">
     <table class="table">
       <thead>
       <tr>
-        <th>Firstname</th>
-        <th>Lastname</th>
-        <th>Email</th>
-        <th>Phone</th>
-        <th>Edit</th>
-        <th>Delete</th>
+        <th th:text="#{person.firstname}"></th>
+        <th th:text="#{person.lastname}"></th>
+        <th th:text="#{person.email}"></th>
+        <th th:text="#{person.phone}"></th>
+        <th th:text="#{actions.edit}"></th>
+        <th th:text="#{actions.delete}"></th>
       </tr>
       </thead>
       <tbody>
@@ -36,18 +35,17 @@
         <td th:text="${person.email}"></td>
         <td th:text="${person.phone}"></td>
         <td>
-          <a th:href="@{/edit/} + ${person.id}" th:text="Edit"></a>
+          <a th:href="@{/edit/} + ${person.id}" th:text="#{actions.edit}"></a>
         </td>
         <td>
           <!-- Query Parameter -->
-          <a th:href="@{/delete(id=${person.id})}" th:text="Delete"></a>
+          <a th:href="@{/delete(id=${person.id})}" th:text="#{actions.delete}"></a>
         </td>
       </tr>
       </tbody>
     </table>
   </div>
-  <div th:if="${people == null or people.empty}">
-    No data to display.
+  <div th:if="${people == null or people.empty}" th:text="#{msg.nodata}">
   </div>
   <footer th:replace="layout/layout :: footer"></footer>
 </div>
