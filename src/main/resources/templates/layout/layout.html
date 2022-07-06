@@ -14,9 +14,13 @@
     <br>
     <a th:href="@{/(lang=es)}">ES</a> |
     <a th:href="@{/(lang=en)}">EN</a>
+    <!-- <p>[[#{template.footer}]]</p> -->
+    <span th:text="#{template.footer}"></span>
+    <form th:action="@{/logout}" method="post">
+      <a href="#" onclick="this.parentNode.submit();" th:text="#{msg.logout}"></a>
+    </form>
   </div>
-  <!-- <p>[[#{template.footer}]]</p> -->
-  <p th:text="#{template.footer}"></p>
+
 </footer>
 </body>
 </html>
