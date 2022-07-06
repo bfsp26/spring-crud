@@ -9,6 +9,12 @@
   <h1 th:text="#{template.header}" class="text-uppercase text-center"></h1>
 </header>
 <footer th:fragment="footer">
+  <!-- Path: @ -->
+  <div>
+    <br>
+    <a th:href="@{/(lang=es)}">ES</a> |
+    <a th:href="@{/(lang=en)}">EN</a>
+  </div>
   <!-- <p>[[#{template.footer}]]</p> -->
   <p th:text="#{template.footer}"></p>
 </footer>
